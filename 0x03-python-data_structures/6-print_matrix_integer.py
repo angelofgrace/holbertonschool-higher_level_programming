@@ -8,3 +8,5 @@ def print_matrix_integer(matrix=[[]]):
                 print("{:d}".format(matrix[i][x]), end=" ")
     if len(matrix) <= 1:
         print("")
+    if not matrix:
+        print("")
