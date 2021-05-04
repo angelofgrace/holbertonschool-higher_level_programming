@@ -1,3 +1,8 @@
 #!/usr/bin/python3
+""" Module Documentation """
+
+
 class Square:
-    pass
+    """ Square Documentation """
+
+    __dict__ = {}
