@@ -20,8 +20,10 @@ class Rectangle:
 
     def __str__(self):
         """ Define the printable string representation """
-        for x in range(0, self.height):
-            for i in range(0, self.width):
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        for x in range(0, self.__height):
+            for i in range(0, self.__width):
                 print("#", end="")
             if x < self.height - 1:
                 print("")
