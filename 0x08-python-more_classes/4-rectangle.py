@@ -32,7 +32,8 @@ class Rectangle:
     def __repr__(self):
         """ Specifying repr to cooperate with eval"""
         return ("Rectangle({:d}, ".format(self.__width) + "{:d})"
-                   .format(self.__height))
+                .format(self.__height))
+
     @property
     def width(self):
         """ Getter function for width """
