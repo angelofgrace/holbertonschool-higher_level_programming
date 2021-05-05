@@ -7,9 +7,9 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ Istantiation of Rectangle object with optional height and width """
-        if type(value) is not int:
+        if type(height) is not int or type(width) is not int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        if height < 0 or width < 0:
             raise ValueError("width must be >= 0")
         self.__width = width
         self.__height = height
