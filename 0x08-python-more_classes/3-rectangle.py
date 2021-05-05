@@ -23,7 +23,8 @@ class Rectangle:
         for x in range(0, self.height):
             for i in range(0, self.width):
                 print("#", end="")
-            print("")
+            if x < self.height - 1:
+                print("")
         return ""
 
     @property
