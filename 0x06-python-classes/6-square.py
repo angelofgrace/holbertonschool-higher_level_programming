@@ -4,7 +4,7 @@
 
 class Square:
     """ A classy square """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """ Instantiation of private size variable """
         if type(position) is not tuple or min(value) < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
