@@ -1,0 +1,20 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(int(8), int(16))
+24
+>>> add_integer(16, "This")
+Traceback (most recent call last):
+
+TypeError: b must be an integer
+>>> add_integer(8, 5)
+13
+>>> add_integer(float('inf'), 10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(,5)
+SyntaxError: invalid syntax
+>>> add_integer()
+Traceback (most recent call last):
+
+TypeError: add_integer() missing 1 required positional argument: 'a'
