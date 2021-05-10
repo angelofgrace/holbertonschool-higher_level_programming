@@ -9,13 +9,13 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     xstr = text.split(".")
-    newtxt = "\n\n".join(xstr)
+    newtxt = ".\n\n".join(xstr)
 
     ystr = newtxt.split("?")
-    newtxt = "\n\n".join(ystr)
+    newtxt = "?\n\n".join(ystr)
 
     zstr = newtxt.split(":")
-    newtxt = "\n\n".join(zstr)
+    newtxt = ":\n\n".join(zstr)
 
     linestr = newtxt.split("\n ")
     newtxt = "\n".join(linestr)
