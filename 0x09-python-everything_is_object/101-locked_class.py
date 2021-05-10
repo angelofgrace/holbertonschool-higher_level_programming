@@ -13,3 +13,4 @@ class LockedClass:
                                  .format(attribute))
         else:
             super().__setattr__(attribute, value)
+            self.__dict__.clear()
