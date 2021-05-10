@@ -21,8 +21,8 @@ def text_indentation(text):
     x = 0
     while x < len(newtxt):
         if newtxt[x] is '\n' and x < len(newtxt) - 1:
-             while newtxt[x + 1] is " ":
-                 x += 1 
+            while newtxt[x + 1] is " ":
+                x += 1
         finalstr += newtxt[x]
         x += 1
 
