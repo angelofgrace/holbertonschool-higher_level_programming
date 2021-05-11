@@ -36,3 +36,13 @@ False
 >>> id(my_list) == id(my_list.print_sorted())
 [3, 4, 5]
 False
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(12)
+>>> my_list.append(6)
+>>> print(my_list)
+[1, 12, 6]
+>>> my_list.print_sorted()
+[1, 6, 12]
+>>> print(my_list)
+[1, 12, 6]
