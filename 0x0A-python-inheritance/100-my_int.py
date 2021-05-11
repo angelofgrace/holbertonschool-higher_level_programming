@@ -2,11 +2,12 @@
 """ What is equal is no longer so """
 
 
-class MyInt:
+class MyInt(int):
     """ Switching it up, up in here """
 
     def __init__(self, value):
         """ Something to compare yourself to """
+        super().__init__()
         self.value = value
 
     def __eq__(self, other):
