@@ -9,8 +9,6 @@ class MyInt(int):
         """ Something to compare yourself to """
         super().__init__()
         self.value = value
-        if self.value < 0:
-            self.value *= -1
 
     def __eq__(self, other):
         """ No longer equals """
@@ -22,7 +20,10 @@ class MyInt(int):
     def __ne__(self, other):
         """ Suddenly it equals """
         if self.value is not other:
-            return False
+            if self.value < 0:
+                return True
+            else:
+                return False
         else:
             return True
 
