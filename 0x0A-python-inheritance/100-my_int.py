@@ -13,7 +13,10 @@ class MyInt(int):
     def __eq__(self, other):
         """ No longer equals """
         if self.value is other:
-            return False
+            if self.value < 0:
+                return False
+            else:
+                return False
         else:
             return True
 
