@@ -5,4 +5,4 @@
 def write_file(filename="", text=""):
     """ Write a given string to a writable file and return # chars written """
     with open(filename, mode="w", encoding="utf-8") as WriteMe:
-         return WriteMe.write(text)
+        return WriteMe.write(text)
