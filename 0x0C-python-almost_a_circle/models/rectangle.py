@@ -40,8 +40,12 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
-        """ Print the rectangle as an array of hash marks """
+        """ Print the rectangle as an array of hash marks offset by x and y """
+        for offset_y in range(0, self.y):
+            print("")
         for i in range(0, self.height):
+            for offset_x in range(0, self.x):
+                print(" ", end="")
             for j in range(0, self.width):
                 print("#", end="")
             print("")
