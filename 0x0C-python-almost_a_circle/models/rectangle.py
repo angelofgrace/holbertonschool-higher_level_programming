@@ -8,12 +8,27 @@ class Rectangle(Base):
     """ Rectangle is a parrallelagram with four right angles """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ """
+        """ Establish id, validate and assign private attribute inputs """
         super().__init__(id)
+        self.validate("width", width)
         self.__width = width
+        self.validate("height", height)
         self.__height = height
+        self.validate("x", x)
         self.__x = x
+        self.validate("y", y)
         self.__y = y
+
+    def validate(self, attr, value):
+        """ Raise attribute value errors if wrong type or beyond range """
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(attr))
+        if attr is "x" or attr is "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(attr))
+        elif attr is "width" or attr is "height":
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(attr))
 
     @property
     def width(self):
@@ -21,6 +36,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        self.validate("width", value)
         self.__width = value
 
     @property
@@ -29,6 +45,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        self.validate("height", value)
         self.__height = value
 
     @property
@@ -37,6 +54,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        self.validate("x", value)
         self.__x = value
 
     @property
@@ -45,4 +63,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        self.validate("y", value)
         self.__y = value
