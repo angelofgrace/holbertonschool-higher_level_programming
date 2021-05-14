@@ -40,7 +40,6 @@ class Rectangle(Base):
             for j in range(0, self.width):
                 print("#", end="")
             print("")
-        
 
     @property
     def width(self):
