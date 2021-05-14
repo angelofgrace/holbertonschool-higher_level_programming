@@ -19,6 +19,11 @@ class Rectangle(Base):
         self.validate("y", y)
         self.__y = y
 
+    def __str__(self):
+        string = "[Rectangle] ({}) {}/{} - {}/{}"\
+                  .format(self.id, self.x, self.y, self.width, self.height)
+        return string
+
     def validate(self, attr, value):
         """ Raise attribute value errors if wrong type or beyond range """
         if type(value) is not int:
