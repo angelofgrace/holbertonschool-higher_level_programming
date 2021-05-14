@@ -34,6 +34,14 @@ class Rectangle(Base):
         """ Calculate the area of a rectangle """
         return (self.width * self.height)
 
+    def display(self):
+        """ Print the rectangle as an array of hash marks """
+        for i in range(0, self.height):
+            for j in range(0, self.width):
+                print("#", end="")
+            print("")
+        
+
     @property
     def width(self):
         return self.__width
