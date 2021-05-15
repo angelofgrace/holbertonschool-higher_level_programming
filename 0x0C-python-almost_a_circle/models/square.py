@@ -7,6 +7,8 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ A square has all the attributes of a Rectangle """
 
+    attrs = ["id", "size", "x", "y"]
+
     def __init__(self, size, x=0, y=0, id=None):
         """ Instantiate a Square, size all 4 sides, id defined or automated """
         super().__init__(size, size, x, y, id)
@@ -19,7 +21,6 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """ No-keyword arguments for Rectangle """
         if args:
-            attrs = ["id", "size", "x", "y"]
             arguments = []
             for x in args:
                 arguments.append(x)
@@ -28,6 +29,13 @@ class Square(Rectangle):
         else:
             for argKey in kwargs.keys():
                 setattr(self, argKey, kwargs[argKey])
+
+    def to_dictionary(self):
+        """ Create a dictionary representation of a Rectangle """
+        attrDict = {}
+        for item in self.attrs:
+            attrDict[item] = getattr(self, item)
+        return attrDict
 
     @property
     def size(self):
