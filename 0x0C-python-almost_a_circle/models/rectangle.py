@@ -7,6 +7,8 @@ from models.base import Base
 class Rectangle(Base):
     """ Rectangle is a parrallelagram with four right angles """
 
+    attrs = ["id", "width", "height", "x", "y"]
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Establish id, validate and assign private attribute inputs """
         super().__init__(id)
@@ -39,7 +41,6 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ No-keyword arguments for Rectangle """
         if args:
-            attrs = ["id", "width", "height", "x", "y"]
             arguments = []
             for x in args:
                 arguments.append(x)
@@ -48,6 +49,14 @@ class Rectangle(Base):
         else:
             for argKey in kwargs.keys():
                 setattr(self, argKey, kwargs[argKey])
+
+    def to_dictionary(self):
+        """ Create a dictionary representation of a Rectangle """
+        attrDict = {}
+        for item in self.attrs:
+            attrDict[item] = getattr(self, item)
+        return attrDict
+        
 
     def area(self):
         """ Calculate the area of a rectangle """
