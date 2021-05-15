@@ -16,6 +16,19 @@ class Square(Rectangle):
                   .format(self.id, self.x, self.y, self.width)
         return astring
 
+    def update(self, *args, **kwargs):
+        """ No-keyword arguments for Rectangle """
+        if args:
+            attrs = ["id", "size", "x", "y"]
+            arguments = []
+            for x in args:
+                arguments.append(x)
+            for (a, b) in zip(attrs, arguments):
+                setattr(self, a, b)
+        else:
+            for argKey in kwargs.keys():
+                setattr(self, argKey, kwargs[argKey])
+
     @property
     def size(self):
         return self.width
