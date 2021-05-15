@@ -5,6 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+
     """ Rectangle is a parrallelagram with four right angles """
 
     attrs = ["id", "width", "height", "x", "y"]
@@ -23,8 +24,8 @@ class Rectangle(Base):
 
     def __str__(self):
         string = "[{}] ({}) {}/{} - {}/{}"\
-                  .format(self.__class__.__name__,
-                          self.id, self.x, self.y, self.width, self.height)
+            .format(self.__class__.__name__,
+                    self.id, self.x, self.y, self.width, self.height)
         return string
 
     def validate(self, attr, value):
@@ -56,7 +57,6 @@ class Rectangle(Base):
         for item in self.attrs:
             attrDict[item] = getattr(self, item)
         return attrDict
-        
 
     def area(self):
         """ Calculate the area of a rectangle """
