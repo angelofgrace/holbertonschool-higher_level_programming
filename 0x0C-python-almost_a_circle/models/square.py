@@ -10,3 +10,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ Instantiate a Square, size all 4 sides, id defined or automated """
         super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        string = "[Square] ({}) {}/{} - {}"\
+                  .format(self.id, self.x, self.y, self.size)
