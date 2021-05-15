@@ -40,7 +40,7 @@ class Rectangle(Base):
         attrs = ["id", "width", "height", "x", "y"]
         arguments = []
         for x in args:
-             arguments.append(x)
+            arguments.append(x)
         for (a, b) in zip(attrs, arguments):
             setattr(self, a, b)
 
