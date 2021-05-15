@@ -20,8 +20,9 @@ class Rectangle(Base):
         self.__y = y
 
     def __str__(self):
-        string = "[Rectangle] ({}) {}/{} - {}/{}"\
-                  .format(self.id, self.x, self.y, self.width, self.height)
+        string = "[{}] ({}) {}/{} - {}/{}"\
+                  .format(self.__class__.__name__,
+                          self.id, self.x, self.y, self.width, self.height)
         return string
 
     def validate(self, attr, value):
