@@ -35,14 +35,18 @@ class Rectangle(Base):
             if value <= 0:
                 raise ValueError("{} must be > 0".format(attr))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ No-keyword arguments for Rectangle """
-        attrs = ["id", "width", "height", "x", "y"]
-        arguments = []
-        for x in args:
-            arguments.append(x)
-        for (a, b) in zip(attrs, arguments):
-            setattr(self, a, b)
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            arguments = []
+            for x in args:
+                arguments.append(x)
+            for (a, b) in zip(attrs, arguments):
+                setattr(self, a, b)
+        else:
+            for argKey in kwargs.keys():
+                setattr(self, argKey, kwargs[argKey])
 
     def area(self):
         """ Calculate the area of a rectangle """
