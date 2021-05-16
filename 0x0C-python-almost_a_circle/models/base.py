@@ -25,3 +25,12 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        inheritorList = []
+        for elem in list_objs:
+            inheritorList.append(cls.to_dictionary(elem))
+        with open("{}.json".format
+                  (cls.__name__), "w") as inheritorsFile:
+            inheritorsFile.write(cls.to_json_string(inheritorList))
