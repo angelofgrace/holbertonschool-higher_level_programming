@@ -29,6 +29,8 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         inheritorList = []
+        if list_objs is None:
+            return inheritorList
         for elem in list_objs:
             inheritorList.append(cls.to_dictionary(elem))
         with open("{}.json".format
