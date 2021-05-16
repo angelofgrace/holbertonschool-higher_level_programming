@@ -5,6 +5,7 @@ import json
 
 
 class Base:
+
     """ Base shape class, instantiation, methods, attributes """
 
     __nb_objects = 0
@@ -18,7 +19,8 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """ Convert instance dictionary to JSON string """
         if not list_dictionaries or list_dictionaries is None:
             return "[]"
         else:
-            return json.dumps(list_dictionaries)            
+            return json.dumps(list_dictionaries)
