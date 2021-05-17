@@ -28,6 +28,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ Convert list of instances of a Base child class to json string """
         inheritorList = []
         with open("{}.json".format
                   (cls.__name__), "w") as inheritorsFile:
@@ -37,3 +38,12 @@ class Base:
                 for elem in list_objs:
                     inheritorList.append(cls.to_dictionary(elem))
                 inheritorsFile.write(cls.to_json_string(inheritorList))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Convert JSON string from file to list of inheritor instances """
+        newInheritorList = []
+        if json_string is None or len(json_string) is 0:
+            return newInheritorList
+        else:
+            return json.loads(json_string)
