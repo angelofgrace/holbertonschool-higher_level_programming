@@ -34,6 +34,6 @@ class Base:
         with open("{}.json".format
                   (cls.__name__), "w") as inheritorsFile:
             if list_objs is None:
-                return inheritorList
+                return "[]"
             else:
                 inheritorsFile.write(cls.to_json_string(inheritorList))
