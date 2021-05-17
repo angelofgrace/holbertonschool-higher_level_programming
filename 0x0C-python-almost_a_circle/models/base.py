@@ -47,3 +47,13 @@ class Base:
             return newInheritorList
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Instantiate a dummy and update via dict """
+        if cls is "Square":
+            dummy = cls(1, 0, 0, "dumsqr")
+        else:
+            dummy = cls(1, 1, 0, 0, "dumrekt")
+        dummy.update(**dictionary)
+        return dummy
