@@ -51,7 +51,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Instantiate a dummy and update via dict """
-        if cls is "Square":
+        if cls.__name__ is "Square":
             dummy = cls(1, 0, 0)
         else:
             dummy = cls(1, 1, 0, 0)
