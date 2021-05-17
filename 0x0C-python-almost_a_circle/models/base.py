@@ -68,7 +68,7 @@ class Base:
                 interpretedInheritors = inheritorsFile.read()
                 """ Store the Python interpretation in a new variable """
                 new = cls.from_json_string(interpretedInheritors)
-                """ Turn Python list of strings into dictionary, update dummy instance """
+                """ Python list of strings >> dictionary; update dummy """
                 for elem in new:
                     instanceDict = dict(elem)
                     instance = cls.create(**instanceDict)
