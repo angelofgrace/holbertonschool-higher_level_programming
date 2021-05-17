@@ -61,6 +61,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ Load JSON string, create shape instances based on translation """
+        instanceList = []
         try:
             with open("{}.json".format(cls.__name__), "r") as inheritorsFile:
                 """ Read the JSON string to a new var """
@@ -68,11 +69,10 @@ class Base:
                 """ Store the Python interpretation in a new variable """
                 new = cls.from_json_string(interpretedInheritors)
                 """ Turn Python list of strings into dictionary, update dummy instance """
-                instanceList = []
                 for elem in new:
                     instanceDict = dict(elem)
                     instance = cls.create(**instanceDict)
                     instanceList.append(instance)
                 return instanceList
         except:
-            return "[]"
+            return instanceList
