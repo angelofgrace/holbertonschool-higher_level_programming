@@ -52,8 +52,8 @@ class Base:
     def create(cls, **dictionary):
         """ Instantiate a dummy and update via dict """
         if cls is "Square":
-            dummy = cls(1, 0, 0, "dumsqr")
+            dummy = cls(1, 0, 0)
         else:
-            dummy = cls(1, 1, 0, 0, "dumrekt")
+            dummy = cls(1, 1, 0, 0)
         dummy.update(**dictionary)
         return dummy
