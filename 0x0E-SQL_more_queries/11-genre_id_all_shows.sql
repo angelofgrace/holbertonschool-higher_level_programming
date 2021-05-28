@@ -2,4 +2,5 @@
 -- account for NULL, organize ascending
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
-FULL OUTER JOIN show_id  
+FULL OUTER JOIN show_id ON tv_shows.id=tv_show_genres.show_id
+ORDER BY tv_shows.title, tv_show_genres.genre_id ASC;
