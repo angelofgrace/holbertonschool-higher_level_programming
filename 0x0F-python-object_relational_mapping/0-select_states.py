@@ -17,5 +17,9 @@ if __name__ == "__main__":
     #find the states in the usa
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
 
+    #store, print the discovered data
+    state_list = cursor.fetchall()
+    print(state_list)
+
     #disconnect from server
     usa_db.close()
