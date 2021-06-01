@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """ Script to list all states from database hbtn_0e_0_usa """
 
+import MySQLdb
+from sys import argv
+
 
 if __name__ == "__main__":
-""" Connect to mySQL server, print states listed in database, ascending id """
-
-    import MySQLdb
-    from sys import argv
+    """ Connect to mySQL server, print states listed in database, ascending id """
 
     #Open database connection
     usa_db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
