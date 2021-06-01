@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """ Script to list all states from database hbtn_0e_0_usa """
 
-import MySQLdb
 
+if __name__ == "__main__":
+""" Connect to mySQL server, print states listed in database, ascending id """
 
-def state_list(mysql usename, mysql password, database name):
-    """ Connect to mySQL server, print states listed in database, ascending id """
+    import MySQLdb
+    from sys import argv
 
     #Open database connection
-    usa_db = MySQLdb.connect("localhost", username, password, name)
+    usa_db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
 
     #prepare a cursor object
     cursor = usa_db.cursor()
@@ -18,6 +19,3 @@ def state_list(mysql usename, mysql password, database name):
 
     #disconnect from server
     usa_db.close()
-
-if __name__ == "__main__":
-    state_list()
