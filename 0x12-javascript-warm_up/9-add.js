@@ -1,11 +1,11 @@
 #!/usr/bin/node
 // print the addition of two input integers
 
-function add(a,b) {
+function add (a, b) {
   if (isNaN(a) || isNaN(b)) {
     console.log('NaN');
   } else {
-    let sum = (parseInt(a) +parseInt(b))
+    const sum = (parseInt(a) + parseInt(b));
     console.log(sum);
   }
 }
