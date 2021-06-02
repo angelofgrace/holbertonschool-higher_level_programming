@@ -1,0 +1,8 @@
+#!/usr/bin/node
+// print the first cmd line arg converted to an integer if possible
+
+if (isNaN(process.argv[2])) {
+  console.log('Not a number')
+} else {
+  console.log(parseInt(process.argv[2]));
+}
