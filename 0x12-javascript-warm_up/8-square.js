@@ -9,6 +9,6 @@ if (isNaN(process.argv[2])) {
     for (let wid = 0; wid < process.argv[2]; wid++) {
       str = str.concat('X');
     }
-  console.log(str);
+    console.log(str);
   }
 }
