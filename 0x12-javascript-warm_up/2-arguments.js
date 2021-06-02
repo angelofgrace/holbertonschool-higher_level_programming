@@ -7,7 +7,7 @@ if (process.argv.length === 2) {
     console.log('Argument found');
     process.exit();
 } else {
-    console.log('Arguments founds');
+    console.log('Arguments found');
     process.exit();
 }
 
